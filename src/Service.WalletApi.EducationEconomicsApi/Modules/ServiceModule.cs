@@ -15,7 +15,7 @@ namespace Service.WalletApi.EducationEconomicsApi.Modules
 			// second parameter is null because we do not store api keys yet for wallet api
 			builder.RegisterEncryptionServiceClient(ApplicationEnvironment.AppName, () => Program.Settings.MyNoSqlWriterUrl);
 
-			builder.RegisterTutorialEconomicsClient(Program.Settings.EducationFlowServiceUrl, Program.LoggerFactory.CreateLogger(typeof (TutorialEconomicsClientFactory)));
+			builder.RegisterTutorialEconomicsClient(Program.Settings.EducationEconomicsServiceUrl, Program.LoggerFactory.CreateLogger(typeof (TutorialEconomicsClientFactory)));
 
 			builder.RegisterType<SystemClock>().AsImplementedInterfaces().SingleInstance();
 
